@@ -1,29 +1,23 @@
 # PROBLEM STATEMENT 
 
-## Time difference between expected time and given time:
+## Common Multiplication Factor:
 
-Time is agintegral part of our life. So chorology which is the discipline of studying time and clock making. A watemaker is passionate about elivering the best watches with accurate time er the world. Each watch he makes, he tests time in it with a watch showing GMT of his place. The task here is to find if the new watch he made is working correctly and find the number of minutes (delay or early) such that: Note the time in the new watch Wait for X hours.
-
-Note the time again in new watch
-Compare the initial time (h, m) a (h1.n) in the new watch. current time
-The time after X hours in new watch may be correct or incorrect.
-Display the number of minutes by which new watch is lagging or early from the actual time. If the time is lagging, display positive integer i.e new watch is running behind time If the time is early, display a negative integer i.e new watch is running ahead of time. The displayed in 24 hour format.
+Republic Day celebrations are round the corner. To mark the importance of the day, Parades held as the most crucial attraction of this celebration. The parade from the soldiers of the Army is performed as a show of strength There are 'A' soldiers from the Army and 'B' soldiers from the Navy to participate in the parade. All the soldiers should march in rows at the parade. The task here is to find the maximum number of soldiers in each row such that: 
+The number of soldiers in each row should be the same. 
+There should be either soldiers from the Navy or Army in each row. No combination of both.
 
 <br> 
 
 ## Example 1:
 ### Input:
 ```
-8         -->      Value of h  
-45        -->      Value of m  
-9         -->      Value of h  
-00        -->      Value of m1 
-1         -->      Value of x  
+12        -->      Value of A
+15        -->      Value of B  
 ```
 
 ### Output:
 ```
-45      -->    Number of minutes lagging
+3       -->    Maximum Number of soldiers in each row
 ```
 
 ```
@@ -31,31 +25,37 @@ Display the number of minutes by which new watch is lagging or early from the ac
 
   From the inputs given above:
   
-  Initial time:   8h 45m
+  Number of army soldiers:   12
   
-  After X hours, i.e after 1 hours
+  Number of navy soldiers:   15
   
-  Current time:   9h 00m
-	
-  The time after 1 hour should be 9h 45m which is the correct time.
+  A common multiplication factor  for both 12 and 15 is 3.
+  So, if there are 3 soldiers in each row in the parade,
+	  A A A
+	  A A A
+	  A A A
+	  A A A
+	  B B B
+	  B B B
+	  B B B
+	  B B B
+	  B B B
   
-  The new watch is working slow.
+  They can march in 4 rows of army soldiers and 5 rows of navy soldiers such that every row has the same number of soldiers and no rows contain a combinantion of both.
+  Hench, the output is 3.
 
 ```
 
 ## Example 2:
 ### Input:
 ```
-14        -->      Value of h  
-30        -->      Value of m  
-18        -->      Value of h  
-00        -->      Value of m1 
-3         -->      Value of x  
+10        -->      Value of A
+20        -->      Value of B  
 ```
 
 ### Output:
 ```
--30      -->    Number of minutes lagging
+10       -->    Maximum Number of soldiers in each row
 ```
 
 ```
@@ -63,35 +63,32 @@ Display the number of minutes by which new watch is lagging or early from the ac
 
   From the inputs given above:
   
-  Initial time:   14h 30m
+  Number of army soldiers:   10
   
-  After x hours, i.e after 3 hours
+  Number of navy soldiers:   20
   
-  Current time:   18h 00m
-	
-  The time after 3 hours should be 17h 30m which is the correct time.
+  A common multiplication factor  for both 10 and 20 are 10.
+  As we need to find maximum number of soldiers in each row, if there are 10 soldiers in each row in the parade,
+	  A A A A A A A A A A A
+	  B B B B B B B B B B B 
+	  B B B B B B B B B B B 
   
-  The new watch is working slow.
+  They can march in 10 rows of army soldiers and 5 rows of navy soldiers such that every row has the same number of soldiers and no rows contain a combinantion of both.
+  Hench, the output is 10.
 
 ```
 
 ### Contraints:
 ```
-0 <= h <= 24
-0 <= m <= 60
-0 <= h <= 24
-0 <= m <= 60
-0 <= k <= 24
+0 < A <= 10000
+0 < B <= 10000
 ```
 
 ### The input format for testing :
-The candidate has to write the code to accept 5 input(s).
+The candidate has to write the code to accept 2 input(s).
 
-- First input - Accept value for h (Positive integer number) 
-- Second Input - Accept value for m (Positive integer number)
-- Third Input - Accept value for h1 (Positive integer number) 
-- Fourth Input - Accept value for m1 (Positive integer number) 
-- Fifth Input - Accept value for X (Positive integer number)
+- First input - Accept value for A (Positive integer number) 
+- Second Input - Accept value for B (Positive integer number)
 
 ### The Output format for testing:
 The output should be an integer number or print the message (if any) given in the problem statement (Check the output in Example 1, Example 2) 
