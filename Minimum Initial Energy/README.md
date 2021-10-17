@@ -2,9 +2,9 @@
 
 ## Minimum Initial Energy Required:
 
-Republic Day celebrations are round the corner. To mark the importance of the day, Parades held as the most crucial attraction of this celebration. The parade from the soldiers of the Army is performed as a show of strength There are 'A' soldiers from the Army and 'B' soldiers from the Navy to participate in the parade. All the soldiers should march in rows at the parade. The task here is to find the maximum number of soldiers in each row such that: 
-The number of soldiers in each row should be the same. 
-There should be either soldiers from the Navy or Army in each row. No combination of both.
+Given an array containing positive and negative numbers. The array represents checkpoints from one end to other end of street. Positive and negative values represent amount of energy at that checkpoint. Positive numbers increase the energy and negative numbers decrease. Find the minimum initial energy required to cross the street such that Energy level never becomes 0 or less than 0.
+
+Note : The value of minimum initial energy required will be 1 even if we cross street successfully without loosing energy to less than and equal to 0 at any checkpoint. The 1 is required for initial check point.
 
 <br> 
 
