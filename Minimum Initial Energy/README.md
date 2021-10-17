@@ -1,6 +1,6 @@
 # PROBLEM STATEMENT 
 
-## Common Multiplication Factor:
+## Minimum Initial Energy Required:
 
 Republic Day celebrations are round the corner. To mark the importance of the day, Parades held as the most crucial attraction of this celebration. The parade from the soldiers of the Army is performed as a show of strength There are 'A' soldiers from the Army and 'B' soldiers from the Navy to participate in the parade. All the soldiers should march in rows at the parade. The task here is to find the maximum number of soldiers in each row such that: 
 The number of soldiers in each row should be the same. 
@@ -11,13 +11,13 @@ There should be either soldiers from the Navy or Army in each row. No combinatio
 ## Example 1:
 ### Input:
 ```
-12        -->      Value of A
-15        -->      Value of B  
+5                   -->      Value of N
+{3,-4,2,5,6}        -->      a[], Elements a[0] to a[N-1], where input each element is separated by new line.  
 ```
 
 ### Output:
 ```
-3       -->    Maximum Number of soldiers in each row
+2         -->     Minimum initial energy required by the athlete.
 ```
 
 ```
@@ -25,37 +25,52 @@ There should be either soldiers from the Navy or Army in each row. No combinatio
 
   From the inputs given above:
   
-  Number of army soldiers:   12
+  Number of checkpoints:   6
   
-  Number of navy soldiers:   15
+  Assume initial energy of the athlete is 0.
   
-  A common multiplication factor  for both 12 and 15 is 3.
-  So, if there are 3 soldiers in each row in the parade,
-	  A A A
-	  A A A
-	  A A A
-	  A A A
-	  B B B
-	  B B B
-	  B B B
-	  B B B
-	  B B B
+  At 1st checkpoint, the energy level is 0+3=3
   
-  They can march in 4 rows of army soldiers and 5 rows of navy soldiers such that every row has the same number of soldiers and no rows contain a combinantion of both.
-  Hench, the output is 3.
+  At 2nd checkpoint, the energy level is 3+(-4)=-1
+  
+  But energy level should not be less than 0 at any point to proceed further in the race.
+  
+  Assume initial energy of the athlete is 1.
+  
+  At 1st checkpoint, the energy level is 1+3=4
+  
+  At 2nd checkpoint, the energy level is 4+(-4)=0
+  
+  But energy level should not be less than 0 at any point to proceed further in the race.
+  
+  Assume initial energy of the athlete is 2.
+  
+  At 1st checkpoint, the energy level is 2+3=5
+  
+  At 2nd checkpoint, the energy level is 5+(-4)=1
+  
+  At 3rd checkpoint, the energy level is 1+2=3
+  
+  At 4th checkpoint, the energy level is 3+5=8
+  
+  At 5th checkpoint, the energy level is 8+6=14
+  
+  The athlete can successfully complete the race if the initial energy is 2.
+  
+  Hence, the output is 2.
 
 ```
 
 ## Example 2:
 ### Input:
 ```
-10        -->      Value of A
-20        -->      Value of B  
+5                     -->      Value of N
+{4, -10, 4, 4, 4}     -->      a[], Elements a[0] to a[N-1], where input each element is separated by new line.  
 ```
 
 ### Output:
 ```
-10       -->    Maximum Number of soldiers in each row
+7         -->     Minimum initial energy required by the athlete.
 ```
 
 ```
@@ -63,32 +78,44 @@ There should be either soldiers from the Navy or Army in each row. No combinatio
 
   From the inputs given above:
   
-  Number of army soldiers:   10
+  Suppose initially we have energy = 0, now at 1st checkpoint, we get 4. 
+  At 2nd checkpoint, energy gets reduced by -10 so we have 4 + (-10) = -6 but at any checkpoint value of energy can not less than equals to 0. 
+  So initial energy must be at least 7 because having 7 as initial energy value at 1st checkpoint our energy will be = 7+4 = 11 and 
+  then we can cross 2nd checkpoint successfully. 
+  Now after 2nd checkpoint, all checkpoint have positive value so we can cross street successfully with 7 initial energy.
   
-  Number of navy soldiers:   20
+  The athlete can successfully complete the race if the initial energy is 7.
   
-  A common multiplication factor  for both 10 and 20 are 10.
-  As we need to find maximum number of soldiers in each row, if there are 10 soldiers in each row in the parade,
-	  A A A A A A A A A A A
-	  B B B B B B B B B B B 
-	  B B B B B B B B B B B 
-  
-  They can march in 10 rows of army soldiers and 5 rows of navy soldiers such that every row has the same number of soldiers and no rows contain a combinantion of both.
-  Hench, the output is 10.
+  Hence, the output is 7.
 
+```
+
+## Example 3:
+### Input:
+```
+3              -->      Value of N
+{6,1,5}        -->      a[], Elements a[0] to a[N-1], where input each element is separated by new line.  
+```
+
+### Output:
+```
+1         -->     Minimum initial energy required by the athlete.
 ```
 
 ### Contraints:
 ```
-0 < A <= 10000
-0 < B <= 10000
+0 < N <= 1000
+0 <= a[i] <= 1000
 ```
+
+#### Time Complexity : O(n) 
+#### Auxiliary Space : O(1)
 
 ### The input format for testing :
 The candidate has to write the code to accept 2 input(s).
 
 - First input - Accept value for A (Positive integer number) 
-- Second Input - Accept value for B (Positive integer number)
+- Second Input - Accept N number of positive integer values(a[]), where each value is separated by a new line.
 
 ### The Output format for testing:
 The output should be an integer number or print the message (if any) given in the problem statement (Check the output in Example 1, Example 2) 
